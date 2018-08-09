@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   get 'welcome/index'
-
+  get '/index', to: 'home#index'
   resources :articles do
   resources :comments
 end
 
-  root 'welcome#index'
+  root 'home#index'
 end
