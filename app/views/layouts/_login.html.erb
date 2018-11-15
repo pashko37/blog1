@@ -1,18 +1,7 @@
-<form class="form-inline needs-validation" novalidate>
-  <label class="sr-only" for="inline-email">Email address</label>
-  <input type="text" class="form-control mb-2 mr-sm-2" id="inline-email" placeholder="Enter email" required>
-  <div class="invalid-feedback">Name can't be blank</div>
-  <div class="valid-feedback">Looks good!</div>
 
-  <label class="sr-only" for="inline-password">Password</label>
-  <input type="password" class="form-control mb-2 mr-sm-2" id="inline-password" placeholder="Password" required>
-  <div class="invalid-feedback">Please provide a valid value.</div>
-  <div class="valid-feedback">Looks good!</div>
-
-  <div class="form-check mb-2 mr-sm-2">
-    <input class="form-check-input" type="checkbox" id="inline-check" required>
-    <label class="form-check-label" for="inline-check">Terms</label>
-    <div class="invalid-feedback">Terms must be accepted</div>
-    <div class="valid-feedback">Looks good!</div>
-  </div>
-</form>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :email, input_html: { class: 'special' } %>
+  <%= f.input :password, input_html: { maxlength: 20 } %>
+  <%= f.input :remember_me, input_html: { value: '1' } %>
+  <%= f.button :submit %>
+<% end %>
